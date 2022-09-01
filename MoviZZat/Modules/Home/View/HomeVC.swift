@@ -41,6 +41,14 @@ class HomeVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        passDataToController()
+        
+    }
+    
+    //MARK:-Helper Functions 
+    
+    func passDataToController(){
+        
         homeVM = HomeViewModel(services: NetworkManager())
         homeVM?.bindingResultMovie = {
             DispatchQueue.main.async {
@@ -57,9 +65,12 @@ class HomeVC: UIViewController {
         homeVM?.fetchMovies()
         nowPlayingVM?.fetchNowPlayingMovies()
         
+        
     }
     
-    //MARK:-Helper Functions 
+    
+    
+    
     
     func setupUI() {
         
