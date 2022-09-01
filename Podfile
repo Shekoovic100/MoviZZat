@@ -10,5 +10,6 @@ target 'MoviZZat' do
     pod 'Alamofire'
     pod 'SDWebImage'
     pod 'Cosmos', '~> 23.0'
+    pod 'ProgressHUD'
 
 end

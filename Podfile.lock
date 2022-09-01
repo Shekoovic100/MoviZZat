@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (5.6.2)
   - Cosmos (23.0.0)
+  - ProgressHUD (13.6)
   - SDWebImage (5.13.2):
     - SDWebImage/Core (= 5.13.2)
   - SDWebImage/Core (5.13.2)
@@ -8,19 +9,22 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - Cosmos (~> 23.0)
+  - ProgressHUD
   - SDWebImage
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Cosmos
+    - ProgressHUD
     - SDWebImage
 
 SPEC CHECKSUMS:
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
   Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
+  ProgressHUD: 4bdaa0d2ddf676b23324b199f9facffb5c3a1620
   SDWebImage: 72f86271a6f3139cc7e4a89220946489d4b9a866
 
-PODFILE CHECKSUM: ce2d7905a96cd37dbed0cfdca8eef474c4d84cd2
+PODFILE CHECKSUM: 5bc8b793d76964b1d0fdcd864ac0f99a1a0d5475
 
 COCOAPODS: 1.11.3
