@@ -15,7 +15,7 @@ class NetworkManager {
     static let shared = NetworkManager()
     
     static  func getPopularMovies(completionHandler: @escaping (Movies?) -> Void ) {
-         AF.request("https://api.themoviedb.org/3/movie/popular?api_key=\(Constants.apiKey)&language=en-US&page=1").responseDecodable(of: Movies.self) { response in
+        AF.request(Constants.popularMovies).responseDecodable(of: Movies.self) { response in
              
             guard let moviesResponse = response.value else{return}
             completionHandler(moviesResponse)
@@ -25,10 +25,20 @@ class NetworkManager {
 
     // Generic Func GetData For NetworkLayer
     
-    func getData<T:Codable>(url:String, tvId :Int? , completionHandler : @escaping (T?)-> Void){
-        AF.request(url).responseDecodable(of: T?.self) { response in
-           guard let Response = response.value else{return}
-           completionHandler(Response)
+    func getData<T>(url:String ,completionHandler : @escaping (T?,Error?)-> Void)where T :Decodable{
+        AF.request(url,method: .get,encoding: URLEncoding.queryString).responseDecodable(of: T.self) {response in
+            switch response.result {
+          
+            case .success:
+                do {
+                    completionHandler(try response.result.get(),nil)
+                }catch{
+                    completionHandler(nil,error)
+                }
+            case .failure(let error):
+                completionHandler(nil,error)
+            }
+           
 
        }
     }

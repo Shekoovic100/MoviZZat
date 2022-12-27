@@ -12,17 +12,23 @@ class HomeViewModel {
     
     let services:NetworkManager?
     var bindingResultMovie : (()->Void) = {}
-    var movieData:Movies?
+    var movieData:Movies?{
+        didSet{
+            bindingResultMovie()
+        }
+    }
     init(services: NetworkManager) {
         self.services = services
     }
     
     
     func fetchMovies(){
-        NetworkManager.getPopularMovies { [weak self] MovieResponse in
-            guard let self = self else{return}
-            self.movieData = MovieResponse
-            self.bindingResultMovie()
+        NetworkManager.shared.getData(url: Constants.popularMovies) {( MovieResponse:Movies?, error)in
+            if let error = error {
+                print(error)
+            }else{
+                self.movieData = MovieResponse
+            }
         }
     }
     

@@ -34,4 +34,5 @@ struct Constants {
     static let collectiontvShowCellId = "SimilarCellCollection"
     static let wishlistVCID = "WishlistVc"
     static let wishlistCellId = "WishlistCell"
+    static let popularMovies = "https://api.themoviedb.org/3/movie/popular?api_key=\(Constants.apiKey)&language=en-US&page=1"
 }

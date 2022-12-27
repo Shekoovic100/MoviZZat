@@ -9,6 +9,7 @@ import UIKit
 import SDWebImage
 
 class HomeVC: UIViewController {
+    
     //MARK:-outlets
     
     @IBOutlet weak var titleMovieLBL: UILabel!
@@ -23,6 +24,7 @@ class HomeVC: UIViewController {
             
         }
     }
+    
     //MARK:- vars
     
     var homeVM:HomeViewModel?
@@ -67,11 +69,7 @@ class HomeVC: UIViewController {
         
         
     }
-    
-    
-    
-    
-    
+
     func setupUI() {
         
         

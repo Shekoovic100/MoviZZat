@@ -10,12 +10,7 @@ import CoreData
 
 
 struct CoreDataModel {
-    
-    
 
-    
-
-  
     let posterPath: String?
     let title: String?
     enum CodingKeys: String, CodingKey {

@@ -12,7 +12,11 @@ class OnAirViewModel{
     
     let services:NetworkManager?
     var bindingResultOnAirTv : (()->()) = {}
-    var TVOnAirData:TvModel?
+    var TVOnAirData:TvModel?{
+        didSet{
+            bindingResultOnAirTv()
+        }
+    }
     init(services: NetworkManager) {
         self.services = services
     }
@@ -20,9 +24,12 @@ class OnAirViewModel{
     
     func fetchOnAirTVShow(){
         
-        NetworkManager.shared.getData(url: Constants.TvURLString + Constants.TvEndpointOnAir, tvId: nil) { (TvOnAir:TvModel?) in
-            self.TVOnAirData = TvOnAir
-            self.bindingResultOnAirTv()
+        NetworkManager.shared.getData(url: Constants.TvURLString + Constants.TvEndpointOnAir) { (TvOnAir:TvModel?,error ) in
+            if let error = error {
+                print(error)
+            }else{
+                self.TVOnAirData = TvOnAir
+            }
         }
     }
     
