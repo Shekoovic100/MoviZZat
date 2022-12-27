@@ -6,28 +6,34 @@
 //
 
 import Foundation
+
 class NowPlayingViewModel {
     
-    let services:NetworkManager?
-    var nowPlayingData: NowPlayingModel?{
-        didSet{
-            bindingResultNowPlaying()
-        }
-    }
-    var bindingResultNowPlaying : (()->Void) = {}
+    let services:Networking?
+    @Published var nowPlayingMovies:Movies?
     
-    init(services: NetworkManager) {
+    
+//    var nowPlayingData: NowPlayingModel?{
+//        didSet{
+//            bindingResultNowPlaying()
+//        }
+//    }
+    
+    
+//    var bindingResultNowPlaying : (()->Void) = {}
+    
+    init(services: Networking) {
         self.services = services
     }
     
     
     func fetchNowPlayingMovies(){
         
-        NetworkManager.shared.getData(url: Constants.URLString + Constants.Endpoint) { (login:NowPlayingModel?,error) in
+        NetworkManager.shared.getData(url: Constants.URLString + Constants.Endpoint) { (nowPlaying:Movies?,error) in
             if let error = error {
                 print(error)
             }else{
-                self.nowPlayingData = login
+                self.nowPlayingMovies = nowPlaying
             }
         }
     }

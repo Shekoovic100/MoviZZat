@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B375A973E983E4FB50F69FE /* Pods_MoviZZat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3D906518F9E4F57AA64E0E /* Pods_MoviZZat.framework */; };
+		E00849BF295BA44A00974099 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00849BE295BA44A00974099 /* UIView+Extension.swift */; };
 		E00CB9D428A9B11500F124EC /* MoviesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00CB9D328A9B11500F124EC /* MoviesCollectionViewCell.swift */; };
 		E00CB9DC28A9C79600F124EC /* NowPlayingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00CB9DB28A9C79600F124EC /* NowPlayingModel.swift */; };
 		E00CB9DE28A9CAC400F124EC /* nowPlayingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00CB9DD28A9CAC400F124EC /* nowPlayingCollectionViewCell.swift */; };
@@ -23,7 +24,7 @@
 		E02FDB8F28B4EAEC001E6673 /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02FDB8E28B4EAEC001E6673 /* CoreDataModel.swift */; };
 		E031E18528AD157700091F82 /* OnAirViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E031E18428AD157700091F82 /* OnAirViewModel.swift */; };
 		E031E18728AD19D100091F82 /* OnAirTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E031E18628AD19D100091F82 /* OnAirTableViewCell.swift */; };
-		E03EE3AC28BB901D00474BB4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03EE3AB28BB901D00474BB4 /* LoginViewController.swift */; };
+		E03EE3AC28BB901D00474BB4 /* NowPlayingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03EE3AB28BB901D00474BB4 /* NowPlayingVC.swift */; };
 		E09DADFD28AB02210062A744 /* NowPlayingDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09DADFC28AB02210062A744 /* NowPlayingDetailVC.swift */; };
 		E0B470DC2885BC78005B5617 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B470DB2885BC78005B5617 /* AppDelegate.swift */; };
 		E0B470DE2885BC78005B5617 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B470DD2885BC78005B5617 /* SceneDelegate.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		4F3D906518F9E4F57AA64E0E /* Pods_MoviZZat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoviZZat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D18998114A31126EB181D58 /* Pods-MoviZZat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviZZat.debug.xcconfig"; path = "Target Support Files/Pods-MoviZZat/Pods-MoviZZat.debug.xcconfig"; sourceTree = "<group>"; };
+		E00849BE295BA44A00974099 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		E00CB9D328A9B11500F124EC /* MoviesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCollectionViewCell.swift; sourceTree = "<group>"; };
 		E00CB9DB28A9C79600F124EC /* NowPlayingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingModel.swift; sourceTree = "<group>"; };
 		E00CB9DD28A9CAC400F124EC /* nowPlayingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nowPlayingCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -61,7 +63,7 @@
 		E02FDB8E28B4EAEC001E6673 /* CoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
 		E031E18428AD157700091F82 /* OnAirViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnAirViewModel.swift; sourceTree = "<group>"; };
 		E031E18628AD19D100091F82 /* OnAirTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnAirTableViewCell.swift; sourceTree = "<group>"; };
-		E03EE3AB28BB901D00474BB4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E03EE3AB28BB901D00474BB4 /* NowPlayingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingVC.swift; sourceTree = "<group>"; };
 		E09DADFC28AB02210062A744 /* NowPlayingDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingDetailVC.swift; sourceTree = "<group>"; };
 		E0B470D82885BC78005B5617 /* MoviZZat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviZZat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B470DB2885BC78005B5617 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E00849BD295BA42500974099 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E00849BE295BA44A00974099 /* UIView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		E012141128B6260800703BF9 /* Wishlist */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,11 +154,12 @@
 		E02E343D2885C2C900363A2A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				E00849BD295BA42500974099 /* Extensions */,
 				E02E34412885C33200363A2A /* Api Manager */,
 				E02E34422885C36400363A2A /* Helper */,
 				E02FDB8B28B4EA3D001E6673 /* CoreData */,
 				E012141128B6260800703BF9 /* Wishlist */,
-				E03EE3A728BB8FC300474BB4 /* Login */,
+				E03EE3A728BB8FC300474BB4 /* Now */,
 				E02E343B2885C29800363A2A /* Home */,
 				E0C8EDDC28B1A15300996339 /* NowPlaying */,
 				E0C30F5228AB8FC0002D7C62 /* Tv Shows */,
@@ -194,6 +205,7 @@
 		E02FDB8928B4D75B001E6673 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E03EE3AB28BB901D00474BB4 /* NowPlayingVC.swift */,
 				E00CB9DD28A9CAC400F124EC /* nowPlayingCollectionViewCell.swift */,
 				E09DADFC28AB02210062A744 /* NowPlayingDetailVC.swift */,
 			);
@@ -217,20 +229,19 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
-		E03EE3A728BB8FC300474BB4 /* Login */ = {
+		E03EE3A728BB8FC300474BB4 /* Now */ = {
 			isa = PBXGroup;
 			children = (
 				E03EE3A828BB8FCD00474BB4 /* View */,
 				E03EE3AA28BB8FDA00474BB4 /* ViewModel */,
 				E03EE3A928BB8FD300474BB4 /* Model */,
 			);
-			path = Login;
+			path = Now;
 			sourceTree = "<group>";
 		};
 		E03EE3A828BB8FCD00474BB4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E03EE3AB28BB901D00474BB4 /* LoginViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -503,7 +514,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E03EE3AC28BB901D00474BB4 /* LoginViewController.swift in Sources */,
+				E03EE3AC28BB901D00474BB4 /* NowPlayingVC.swift in Sources */,
 				E0C1096B288F516900504802 /* DetailViewModel.swift in Sources */,
 				E01EAB4728AE392F00160014 /* similiarTvShowViewModel.swift in Sources */,
 				E02E343A2885BDCB00363A2A /* NetworkManager.swift in Sources */,
@@ -529,6 +540,7 @@
 				E0B470E02885BC78005B5617 /* HomeVC.swift in Sources */,
 				E0244AAD28BCBDA5007CCC69 /* LoginModel.swift in Sources */,
 				E0B470E62885BC78005B5617 /* MoviZZat.xcdatamodeld in Sources */,
+				E00849BF295BA44A00974099 /* UIView+Extension.swift in Sources */,
 				E0B470DC2885BC78005B5617 /* AppDelegate.swift in Sources */,
 				E0B470DE2885BC78005B5617 /* SceneDelegate.swift in Sources */,
 				E02FDB8F28B4EAEC001E6673 /* CoreDataModel.swift in Sources */,

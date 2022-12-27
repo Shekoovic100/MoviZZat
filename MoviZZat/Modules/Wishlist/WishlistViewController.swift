@@ -43,9 +43,9 @@ extension WishlistViewController :UITableViewDelegate ,UITableViewDataSource {
             UITableViewCell()
         }
       
-        if let  stringa = arr?[indexPath.row].value(forKey: "movieImage")as? String{
+        if let  string = arr?[indexPath.row].value(forKey: "movieImage")as? String{
             
-            cell.wishlistMovieImageView.sd_setImage(with:URL(string:  Constants.imageUrl + stringa ) ,placeholderImage: UIImage(named: Constants.placeHolder))
+            cell.wishlistMovieImageView.sd_setImage(with:URL(string:  Constants.imageUrl + string ) ,placeholderImage: UIImage(named: Constants.placeHolder))
         }
     
         

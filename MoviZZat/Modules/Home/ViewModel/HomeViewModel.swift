@@ -7,27 +7,32 @@
 
 import Foundation
 
-class HomeViewModel {
+
+class HomeViewModel:ObservableObject {
     
     
-    let services:NetworkManager?
-    var bindingResultMovie : (()->Void) = {}
-    var movieData:Movies?{
-        didSet{
-            bindingResultMovie()
-        }
-    }
-    init(services: NetworkManager) {
+    let services:Networking?
+    
+    @Published var movies:Movies?
+    
+//    var bindingResultMovie : (()->Void) = {}
+//    var movieData:Movies?{
+//        didSet{
+//            bindingResultMovie()
+//        }
+//    }
+    
+    init(services: Networking) {
         self.services = services
     }
     
     
     func fetchMovies(){
-        NetworkManager.shared.getData(url: Constants.popularMovies) {( MovieResponse:Movies?, error)in
+        NetworkManager.shared.getData(url: Constants.popularMovies) { [weak self]( MovieResponse:Movies?, error)in
             if let error = error {
                 print(error)
             }else{
-                self.movieData = MovieResponse
+                self?.movies = MovieResponse
             }
         }
     }

@@ -10,7 +10,7 @@ import Cosmos
 import CoreData
 class MovieDetailsVC: UIViewController {
     
-    //MARK:- outlets
+    //MARK: - Outlets
     
     @IBOutlet weak var wishlistbutton: UIButton!{
         didSet{
@@ -22,31 +22,31 @@ class MovieDetailsVC: UIViewController {
     @IBOutlet weak var ratingCosmosView: CosmosView!
     @IBOutlet weak var movieYearLBL: UILabel!
     @IBOutlet weak var movieNameLBL: UILabel!
-    @IBOutlet weak var movieImageView: UIImageView!{
-        didSet{
-            movieImageView.layer.cornerRadius = movieImageView.frame.width / 9
-        }
-    }
+    @IBOutlet weak var movieImageView: UIImageView!
+    //{
+//        didSet{
+//            movieImageView.layer.cornerRadius = movieImageView.frame.height / 2
+//        }
+ //   }
     
-    //MARK:-vars
+     //MARK: -vars
    
     var detailMovie: Results?
-    var detailNowPlaying:playingResults?
+    var detailNowPlaying:Results?
     var moedel:Movies?
     
-    //MARK:-applifcycle
+    
+     //MARK: - applifcycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Movie Details"
         passMovieDataToVc()
-        
+        passToVC()
     }
+
+     //MARK: -Helper functions
     
- 
-   
-    
-    //MARK:-Helper function
     func passMovieDataToVc(){
         
         overViewTextView.text = detailMovie?.overview ?? ""
@@ -58,9 +58,19 @@ class MovieDetailsVC: UIViewController {
     }
     
     
-    
+    func passToVC(){
+        
+        overViewTextView.text = detailMovie?.overview ?? ""
+        ratingCosmosView.text = "\( detailMovie?.voteAverage ?? 0)"
+        movieYearLBL.text = detailMovie?.releaseDate
+        movieNameLBL.text = detailMovie?.title
+        movieImageView.sd_setImage(with: URL(string: "\( Constants.imageUrl + (detailMovie?.backdropPath ?? "") )"), placeholderImage: UIImage(named: Constants.placeHolder))
+        originalLangLBL.text = detailMovie?.originalLanguage?.uppercased()
+        
+    }
+
     @IBAction func wishkistButtonPressed(_ sender: UIButton) {
-        let alertController = UIAlertController(title: "Save to WishList?", message: "", preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: "", message: "Save to WishList?", preferredStyle: .actionSheet)
         alertController.addAction(UIAlertAction(title: "OK", style: .default))
         CoreDataStack.Shared.SaveToWishListMovie(favouriteMovies: detailMovie!)
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {
@@ -68,12 +78,6 @@ class MovieDetailsVC: UIViewController {
             
         }))
         self.navigationController?.present(alertController, animated: true)
-           
-      
-       
-       
-      
-        
     }
     
     

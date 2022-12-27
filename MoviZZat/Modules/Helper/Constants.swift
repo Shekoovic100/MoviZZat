@@ -24,7 +24,7 @@ struct Constants {
     static let TvEndpointPopular = "popular?api_key=\(Constants.apiKey)&language=en-US&page=1"
     static let Endpoint = "now_playing?api_key=\(Constants.apiKey)&language=en-US&page=1"
     static let detialViewControllerIdentifier = "MovieDetailsVC"
-    static let nowPlayingdetialViewControllerIdentifier = "NowPlayingDetailVC"
+    static let nowPlayingDetialViewControllerIdentifier = "NowPlayingDetailVC"
     static let cellIdTvShow = "TvShowTableViewCell"
     static let cellIdTvShowOnAir = "onAirCell"
     static let TvEndpointOnAir = "on_the_air?api_key=\(Constants.apiKey)&language=en-US&page=1"

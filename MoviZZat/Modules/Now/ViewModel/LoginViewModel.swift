@@ -19,13 +19,4 @@ class LoginViewModel {
     }
     
     
-    
-    func getDataLogin(userName:String,password:String){
-        NetworkManager.shared.login(username: userName, password: password) { loginResponse, error in
-            self.LoginData = loginResponse
-            self.BindingResultLogin()
-        }
-    
-    }
-    
 }

@@ -10,14 +10,17 @@ import Foundation
 
 class OnAirViewModel{
     
-    let services:NetworkManager?
+    let services:Networking?
+    
+    @Published var onAirData:TvModel?
+    
     var bindingResultOnAirTv : (()->()) = {}
     var TVOnAirData:TvModel?{
         didSet{
             bindingResultOnAirTv()
         }
     }
-    init(services: NetworkManager) {
+    init(services: Networking) {
         self.services = services
     }
     
@@ -28,7 +31,7 @@ class OnAirViewModel{
             if let error = error {
                 print(error)
             }else{
-                self.TVOnAirData = TvOnAir
+                self.onAirData = TvOnAir
             }
         }
     }
