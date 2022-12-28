@@ -42,13 +42,13 @@ class MovieDetailsVC: UIViewController {
         super.viewDidLoad()
         self.title = "Movie Details"
         passMovieDataToVc()
-        passToVC()
+      
     }
 
      //MARK: -Helper functions
-    
+
     func passMovieDataToVc(){
-        
+
         overViewTextView.text = detailMovie?.overview ?? ""
         ratingCosmosView.text = "\( detailMovie?.voteAverage ?? 0)"
         movieYearLBL.text = detailMovie?.releaseDate
@@ -56,18 +56,8 @@ class MovieDetailsVC: UIViewController {
         movieImageView.sd_setImage(with: URL(string: "\( Constants.imageUrl + (detailMovie?.backdropPath ?? "") )"), placeholderImage: UIImage(named: Constants.placeHolder))
         originalLangLBL.text = detailMovie?.originalLanguage?.uppercased()
     }
-    
-    
-    func passToVC(){
-        
-        overViewTextView.text = detailMovie?.overview ?? ""
-        ratingCosmosView.text = "\( detailMovie?.voteAverage ?? 0)"
-        movieYearLBL.text = detailMovie?.releaseDate
-        movieNameLBL.text = detailMovie?.title
-        movieImageView.sd_setImage(with: URL(string: "\( Constants.imageUrl + (detailMovie?.backdropPath ?? "") )"), placeholderImage: UIImage(named: Constants.placeHolder))
-        originalLangLBL.text = detailMovie?.originalLanguage?.uppercased()
-        
-    }
+
+
 
     @IBAction func wishkistButtonPressed(_ sender: UIButton) {
         let alertController = UIAlertController(title: "", message: "Save to WishList?", preferredStyle: .actionSheet)
