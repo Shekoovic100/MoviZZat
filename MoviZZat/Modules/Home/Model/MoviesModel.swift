@@ -11,7 +11,7 @@ import Foundation
 struct Movies: Codable {
 
     let page: Int?
-    let results: [Results]
+    var results: [Results]
     let totalPages: Int?
     let totalResults: Int?
 

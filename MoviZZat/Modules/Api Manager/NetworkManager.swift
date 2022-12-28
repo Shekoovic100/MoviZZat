@@ -11,7 +11,7 @@ import Alamofire
 
 protocol Networking {
     
-    func getData<T>(url:String ,completionHandler : @escaping (T?,Error?)-> Void)where T :Decodable
+    func getData<T>(url:String ,parameters:[String:Any]?,completionHandler : @escaping (T?,Error?)-> Void)where T :Decodable
 }
 
 class NetworkManager:Networking {
@@ -21,8 +21,8 @@ class NetworkManager:Networking {
 
     // Generic Func GetData For NetworkLayer
     
-    func getData<T>(url:String ,completionHandler : @escaping (T?,Error?)-> Void)where T :Decodable{
-        AF.request(url,method: .get,encoding: URLEncoding.queryString).responseDecodable(of: T.self) {response in
+    func getData<T>(url:String ,parameters:[String:Any]? = nil,completionHandler : @escaping (T?,Error?)-> Void)where T :Decodable{
+        AF.request(url,method: .get,parameters:parameters,encoding: URLEncoding.queryString).responseDecodable(of: T.self) {response in
             switch response.result {
           
             case .success:

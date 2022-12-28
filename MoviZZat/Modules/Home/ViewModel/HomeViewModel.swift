@@ -28,6 +28,7 @@ class HomeViewModel:ObservableObject {
     
     
     func fetchMovies(){
+      
         NetworkManager.shared.getData(url: Constants.popularMovies) { [weak self]( MovieResponse:Movies?, error)in
             if let error = error {
                 print(error)

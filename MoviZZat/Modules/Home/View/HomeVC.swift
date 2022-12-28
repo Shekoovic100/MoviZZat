@@ -28,7 +28,7 @@ class HomeVC: UIViewController {
     // var homeVM:HomeViewModel?
     //    var nowPlayingVM:NowPlayingViewModel?
     var nowPlayingViewModel = NowPlayingViewModel(services: NetworkManager())
-    
+
     
     //MARK: - LifeCycle
     
@@ -57,6 +57,9 @@ class HomeVC: UIViewController {
     }
     
     //MARK: - Helper Functions
+ 
+    
+    
     
     /// binding with Combine
     func bindHomeViewModel(){
@@ -145,5 +148,13 @@ extension HomeVC :UICollectionViewDelegate,UICollectionViewDataSource,UICollecti
             guard let vc  = storyboard?.instantiateViewController(withIdentifier: Constants.detialViewControllerIdentifier) as? MovieDetailsVC else {return}
             vc.detailMovie = viewModel.movies?.results[indexPath.row]
             self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard let moviesCount = viewModel.movies?.results.count  else {return}
+        if indexPath.row == moviesCount - 1  {
+            print("Done")
+        }
     }
 }
